@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'dice.dart';
+import 'dice_app/dice.dart';
 
 void main() => runApp(const MyApp());
 
