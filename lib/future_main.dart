@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatefulWidget {
-  Home({Key? key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(30.0),
+          padding: const EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -111,11 +111,10 @@ class _HomeState extends State<Home> {
   // 2. 3초 후 then 메서드가 실행된다.
   // 3. then 메서드 실행이 다 끝나고 그 아래 코드들이 실행된다.
   Future<void> futureTest() async {
-    // setState(() {
-    //   result = 'no data found';
-    //   debugPrint(result);
-    //   debugPrint('init');
-    // });
+    setState(() {
+      result = 'future delayed will start soon..';
+      debugPrint(result);
+    });
     await Future.delayed(const Duration(seconds: 3)).then((value) {
       debugPrint('Here comes second');
       setState(() {
